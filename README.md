@@ -1,2 +1,2 @@
-# Vim
+# VimSetup
 My personal Vim setup
