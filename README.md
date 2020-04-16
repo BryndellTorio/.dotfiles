@@ -1,5 +1,5 @@
 # my full Linux Setup
 
-Path: ~/.bashrc
-      ~/.tmux.conf
+Path: ~/.bashrc |
+      ~/.tmux.conf |
       ~/.vimrc
