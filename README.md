@@ -1,4 +1,5 @@
-# VimSetup
-My personal Vim setup
+# my full Linux Setup
 
-Path: %USERPROFILE%/_vimrc
+Path: ~/.bashrc |
+      ~/.tmux.conf |
+      ~/.vimrc
