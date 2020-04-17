@@ -134,3 +134,4 @@ alias cmplpp="g++ -o runCode code.cpp"
 alias cmpl="gcc -o runCode code.c"
 
 alias cpysu="cp ~/.bashrc ~/.linuxSetUp && cp ~/.vimrc ~/.linuxSetUp && cp ~/.tmux.conf ~/.linuxSetUp"
+alias prjdir="cd /mnt/c/Users/GAIA/Documents/PlatformIO/Projects/"
