@@ -15,12 +15,10 @@ set incsearch
 set encoding=utf-8
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-
 "Stolen from Max Cantor, AE
 "5
 "35:29 / 1:14:02, How to Do 90% of What Plugins Do (With Just Vim) talk by Max.
 nnoremap ,html :-1read /mnt/c/Users/GAIA/.config/vim/.skeletal.html<CR>3jwf>a
-
 set path+=**
 set nocompatible
 filetype off
