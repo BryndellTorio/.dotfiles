@@ -1,5 +1,4 @@
 syntax on
-
 set wildmenu
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -14,7 +13,6 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
-
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
@@ -24,7 +22,6 @@ highlight ColorColumn ctermbg=0 guibg=lightgrey
 nnoremap ,html :-1read /mnt/c/Users/GAIA/.config/vim/.skeletal.html<CR>3jwf>a
 
 set path+=**
-
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -83,6 +80,5 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent><leader>+ :vertical resize +5<CR>
 nnoremap <silent><leader>- :vertical resize -5<CR>
 nnoremap <leader>e :e $MYVIMRC<CR>
-
 nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent><leader>gf :YcmCompleter FixIt<CR>
