@@ -1,0 +1,31 @@
+#Major Commands
+alias sag="sudo apt-get"
+#SOME ALIASES
+alias v="vim"
+alias g="git"
+alias mkd="mkdir -pv"
+alias _firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/Firefox.exe"
+alias firefox="_firefox &"
+alias _kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe"
+alias kicad="_kicad &"
+
+#Adding Color
+alias ls="ls -hN --color=auto --group-directories-first"
+alias grep="grep --color=auto"
+alias ccat="highlight --out-format=ansi"
+
+#Clang commands
+alias cmplpp="g++ -o runCode code.cpp"
+alias cmpl="gcc -o runCode code.c"
+
+#Common Directories I use.
+alias cpysu="cp ~/.bashrc ~/.linuxSetUp && cp ~/.vimrc ~/.linuxSetUp && cp ~/.tmux.conf ~/.linuxSetUp"
+alias prj="cd /mnt/c/Users/GAIA/Documents/Project/"
+alias hm="cd /mnt/c/Users/GAIA"
+alias film="cd /mnt/c/Movies"
+
+#Common Development Tools
+alias snptl=snippingtool.exe
+alias cmd=cmd.exe
+alias winps=powershell.exe
+alias pio=platformio.exe

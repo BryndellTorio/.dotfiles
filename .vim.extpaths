@@ -1,0 +1,2 @@
+set path+=/mnt/c/Users/GAIA/.platformio/packages/framework-arduino-avr/cores/arduino/**
+set path+=/mnt/c/Users/GAIA/.platformio/packages/framework-arduino-avr/libraries/**2
