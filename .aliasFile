@@ -1,6 +1,6 @@
 #Major Commands
 alias sag="sudo apt-get"
-alias lkfr="ls | grep -i "
+alias lkfr="ls -a | grep -i "
 alias FIND="find . -iname"
 alias FINDR="find ~ -iname"
 
