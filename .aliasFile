@@ -1,5 +1,9 @@
 #Major Commands
 alias sag="sudo apt-get"
+alias lkfr="ls | grep -i "
+alias FIND="find . -iname"
+alias FINDR="find ~ -iname"
+
 #SOME ALIASES
 alias v="vim"
 alias g="git"
@@ -20,8 +24,8 @@ alias cmpl="gcc -o runCode code.c"
 
 #Common Directories I use.
 alias cpysu="cp ~/.bashrc ~/.linuxSetUp && cp ~/.vimrc ~/.linuxSetUp && cp ~/.tmux.conf ~/.linuxSetUp"
-alias prj="cd /mnt/c/Users/GAIA/Documents/Project/"
-alias hm="cd /mnt/c/Users/GAIA"
+alias prj="cd /mnt/c/Users/Bryndell/Documents/PlatformIO/Projects"
+alias hm="cd /mnt/c/Users/Bryndell"
 alias film="cd /mnt/c/Movies"
 
 #Common Development Tools
