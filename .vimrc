@@ -5,23 +5,24 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nowrap
-set nu
+set spell
+set relativenumber
 set smartcase
+set nu
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
-set colorcolumn=80
+set colorcolumn=110
+set nocompatible
 highlight ColorColumn ctermbg=0 guibg=lightgrey
-"Stolen from Max Cantor, AE
-"5
+"Stolen from Max Cantor.
 "35:29 / 1:14:02, How to Do 90% of What Plugins Do (With Just Vim) talk by Max.
 nnoremap ,html :-1read /mnt/c/Users/GAIA/.config/vim/.skeletal.html<CR>3jwf>a
 set path+=**
-set nocompatible
-filetype off
+filetype on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
 
@@ -35,6 +36,7 @@ Plugin 'lyuts/vim-rtags'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
 Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
@@ -48,21 +50,22 @@ if executable('rg')
 endif
 
 let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+let g:ctrlp_use_caching=0
 let mapleader = " "
 let g:netrw_browse_split=2
 let g:netrw_banner=0
 let g:netrw_winsize=25
 
-let g:ctrlp_use_caching=0
-
 let g:ycm_global_ycm_extra_conf="~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py"
 let g:ycm_show_diagnostics_ui = 0
-let syntastic_cpp_checkers = ["clang_tidy", "gcc", "avrgcc", "clang_check"]
-let syntastic_tex_checkers = ["chktex", "lacheck", "proselint"]
+let syntastic_cpp_checkers = ["clang_tidy", "gcc", "avrgcc"]
+let g:syntastic_tex_checkers = ["lacheck", "text/language_check"]
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+
+let g:syntastic_cpp_check_header = 0
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -78,5 +81,6 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <silent><leader>+ :vertical resize +5<CR>
 nnoremap <silent><leader>- :vertical resize -5<CR>
 nnoremap <leader>e :e $MYVIMRC<CR>
+nnoremap <leader>s :source ~/.vimrc<CR>
 nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent><leader>gf :YcmCompleter FixIt<CR>
