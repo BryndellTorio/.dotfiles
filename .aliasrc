@@ -4,6 +4,7 @@ alias lkfr="ls -a | grep -i "
 alias FIND="find . -iname"
 alias FINDR="find ~ -iname"
 alias update="source ~/.zshrc && echo '~/.zshrc file updated.'"
+alias ta="tmux attach"
 
 #SOME ALIASES
 alias v="vim"
@@ -12,6 +13,7 @@ alias mkd="mkdir -pv"
 alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/Firefox.exe &"
 alias kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe &"
 alias duck="web_search duckduckgo \\"
+alias arduino="/mnt/c/Program\ Files\ \(x86\)/Arduino/arduino.exe &"
 
 #Adding Color
 alias ls="ls -hN --color=auto --group-directories-first"
@@ -23,14 +25,15 @@ alias cmplpp="g++ -o runCode code.cpp"
 alias cmpl="gcc -o runCode code.c"
 
 #Common Directories I use.
-alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasFile ~/.zshrc -t ~/.dotfiles && echo 'Files copied in .dotfiles File.'"
-alias prj="cd /mnt/c/Users/GAIA/Documents/Project"
-alias hm="cd /mnt/c/Users/GAIA"
+alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc -t ~/.dotfiles && echo 'Files copied to ~/.dotfiles File.'"
+alias cplib="cp -r /mnt/c/Users/Bryndell/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
+alias prj="cd /mnt/c/Users/Bryndell/Desktop/Project"
+alias hm="cd /mnt/c/Users/Bryndell"
 alias film="cd /mnt/c/Movies"
 
 #Common Development Tools
-alias snptl=snippingtool.exe
+alias snptl='snippingtool.exe &'
 alias cmd=cmd.exe
 alias wps=powershell.exe
 alias pio=platformio.exe
-alias notepad=notepad.exe 
+alias notepad='notepad.exe &'

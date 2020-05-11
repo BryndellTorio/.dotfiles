@@ -12,8 +12,8 @@ plugins=(
     zsh-autosuggestions
  )
 
- if [ -f ~/.aliasFile ]; then
-     . ~/.aliasFile
+ if [ -f ~/.aliasrc ]; then
+     . ~/.aliasrc
  fi
 
 source $ZSH/oh-my-zsh.sh
