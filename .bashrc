@@ -122,3 +122,5 @@ if [ ! -e "$VIM_EXTPATHS" ] || [ "/usr/bin/cpp" -nt "$VIM_EXTPATHS" ]; then
         echo | cpp -v 2>&1 | \
                 awk '/^#include </ { state=1 } /End of search list/ { state=0 } /^ / && state { print "set path+=" substr($0, 2) "/**2" }' > $VIM_EXTPATHS
 fi
+
+set -o vi
