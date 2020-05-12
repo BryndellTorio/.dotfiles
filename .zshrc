@@ -1,26 +1,34 @@
-export ZSH="/home/delltor/.oh-my-zsh"
-
+# Path to your oh-my-zsh installation.
+export ZSH="/home/gaia/.oh-my-zsh"
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 plugins=(
     git
-    bundler
-    dotenv
     web-search
     sudo
-    zsh-syntax-highlighting
-    zsh-autosuggestions
- )
+    bundler
+)
 
-# Stolen from Luke Smith.
-# Use vim keys in tab complete menu:
-bindkey -M menuselect 'h' vi-backward-char
-bindkey -M menuselect 'k' vi-up-line-or-history
-bindkey -M menuselect 'l' vi-forward-char
-bindkey -M menuselect 'j' vi-down-line-or-history
-bindkey -v '^?' backward-delete-char
- 
-# Change cursor shape for different vi modes.
+source $ZSH/oh-my-zsh.sh
+bindkey -v
+export KEYTIMEOUT=1
+
+if [ -f ~/.aliasrc ]; then
+    . ~/.aliasrc
+fi
+
+# User configuration
+# export MANPATH="/usr/local/man:$MANPATH"
+# You may need to manually set your language environment
+export LANG=en_US.UTF-8
+
+# Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ fi
+
+#Change cursor shape for different vi modes.
 function zle-keymap-select {
 if [[ ${KEYMAP} == vicmd ]] ||
     [[ $1 = 'block' ]]; then
@@ -41,9 +49,5 @@ zle -N zle-line-init
 echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
- if [ -f ~/.aliasrc ]; then
-     . ~/.aliasrc
- fi
+source /home/gaia/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-source $ZSH/oh-my-zsh.sh
-source /home/delltor/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
