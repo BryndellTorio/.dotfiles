@@ -1,8 +1,8 @@
 #Major Commands
 alias sag="sudo apt-get"
 alias lkfr="ls -a | grep -i "
-alias FIND="find . -iname"
-alias FINDR="find ~ -iname"
+alias FIND="sudo find . -iname"
+alias FINDR="sudo find ~ -iname"
 alias update="source ~/.zshrc && echo '~/.zshrc file updated.'"
 alias ta="tmux attach"
 
@@ -16,6 +16,9 @@ alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/Firefox.exe &"
 alias kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe &"
 alias duck="web_search duckduckgo \\"
 alias arduino="/mnt/c/Program\ Files\ \(x86\)/Arduino/arduino.exe &"
+alias xlaunch="export DISPLAY=:0 && /mnt/c/Program\ Files\ \(x86\)/Xming/XLaunch.exe &"
+alias open="/mnt/c/Program\ Files\ \(x86\)/Adobe/Reader\ 11.0/Reader/AcroRd32.exe"
+
 
 #Adding Color
 alias ls="ls -hN --color=auto --group-directories-first"
@@ -26,11 +29,13 @@ alias ccat="highlight --out-format=ansi"
 alias cmplpp="g++ -o runCode code.cpp"
 alias cmpl="gcc -o runCode code.c"
 
-#Common Directories I use.
+#Copy commands
 alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc -t ~/.dotfiles && echo '.bashrc .vimrc .tmux.conf .aliasrc .zshrc copied to ~/.dotfiles File.'"
-alias cplib="cp -r /mnt/c/Users/GAIA/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
-alias prj="cd /mnt/c/Users/GAIA/Documents/Project"
-alias hm="cd /mnt/c/Users/GAIA/"
+alias cpprj="cp -r '/mnt/c/Users/Bryndell/Desktop/Project/PrjGEO/Hardware Design/GEO v.3/' -t /mnt/c/Users/Bryndell/Desktop/Project/NOTES/Design/ && echo 'GEOv.3 copied to **/NOTES/'"
+
+#Super Jump
+alias prj="cd /mnt/c/Users/Bryndell/Desktop/Project/"
+alias hm="cd /mnt/c/Users/Bryndell/"
 alias film="cd /mnt/c/Movies"
 
 #Common Development Tools
