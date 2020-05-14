@@ -17,7 +17,9 @@ alias kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe &"
 alias duck="web_search duckduckgo \\"
 alias arduino="/mnt/c/Program\ Files\ \(x86\)/Arduino/arduino.exe &"
 alias xlaunch="export DISPLAY=:0 && /mnt/c/Program\ Files\ \(x86\)/Xming/XLaunch.exe &"
-alias open="/mnt/c/Program\ Files\ \(x86\)/Adobe/Reader\ 11.0/Reader/AcroRd32.exe"
+alias excel='/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/EXCEL.EXE'
+alias openpdf="/mnt/c/Program\ Files\ \(x86\)/Adobe/Reader\ 11.0/Reader/AcroRd32.exe"
+alias openjpg="mspaint.exe"
 
 
 #Adding Color
