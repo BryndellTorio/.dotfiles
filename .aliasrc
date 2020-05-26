@@ -5,6 +5,9 @@ alias FIND="sudo find . -iname"
 alias FINDR="sudo find ~ -iname"
 alias update="source ~/.zshrc && echo '~/.zshrc file updated.'"
 alias ta="tmux attach"
+alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
+alias shac="ssh-add /home/gaia/.ssh/cloud_wp_rsa"
+alias shag="ssh-add /home/gaia/.ssh/github_rsa"
 
 #SOME ALIASES
 alias v="vim"
@@ -13,14 +16,17 @@ alias python="python2.7"
 alias python3="python3.8"
 alias mkd="mkdir -pv"
 alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/Firefox.exe &"
+alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe &"
 alias kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe &"
 alias duck="web_search duckduckgo \\"
 alias arduino="/mnt/c/Program\ Files\ \(x86\)/Arduino/arduino.exe &"
-alias xlaunch="export DISPLAY=:0 && /mnt/c/Program\ Files\ \(x86\)/Xming/XLaunch.exe &"
-alias excel='/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/EXCEL.EXE'
-alias openpdf="/mnt/c/Program\ Files\ \(x86\)/Adobe/Reader\ 11.0/Reader/AcroRd32.exe"
+alias vlc="/mnt/c/Program\ Files/VideoLAN/VLC/vlc.exe"
+alias excel="/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/EXCEL.EXE"
 alias openjpg="mspaint.exe"
-
+alias music="ducky music.youtube.com"
+alias msg="ducky messenger"
+alias cloud="ducky console.cloud.google.com"
+alias cpplint="~/styleguide/cpplint/cpplint.py "
 
 #Adding Color
 alias ls="ls -hN --color=auto --group-directories-first"
@@ -31,13 +37,11 @@ alias ccat="highlight --out-format=ansi"
 alias cmplpp="g++ -o runCode code.cpp"
 alias cmpl="gcc -o runCode code.c"
 
-#Copy commands
+#Common Directories I use.
 alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc -t ~/.dotfiles && echo '.bashrc .vimrc .tmux.conf .aliasrc .zshrc copied to ~/.dotfiles File.'"
-alias cpprj="cp -r '/mnt/c/Users/Bryndell/Desktop/Project/PrjGEO/Hardware Design/GEO v.3/' -t /mnt/c/Users/Bryndell/Desktop/Project/NOTES/Design/ && echo 'GEOv.3 copied to **/NOTES/'"
-
-#Super Jump
-alias prj="cd /mnt/c/Users/Bryndell/Desktop/Project/"
-alias hm="cd /mnt/c/Users/Bryndell/"
+alias cplib="cp -r /mnt/c/Users/GAIA/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
+alias prj="cd /mnt/c/Users/GAIA/Documents/Project"
+alias hm="cd /mnt/c/Users/GAIA/"
 alias film="cd /mnt/c/Movies"
 
 #Common Development Tools

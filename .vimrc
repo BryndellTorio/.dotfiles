@@ -5,9 +5,9 @@ set shiftwidth=4
 set expandtab
 set smartindent
 set nowrap
-set spell
 set relativenumber
 set smartcase
+set spell
 set nu
 set noswapfile
 set nobackup
@@ -16,60 +16,41 @@ set undofile
 set incsearch
 set encoding=utf-8
 set colorcolumn=110
+set smartindent
 set nocompatible
+filetype plugin indent on
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 "Stolen from Max Cantor.
 "35:29 / 1:14:02, How to Do 90% of What Plugins Do (With Just Vim) talk by Max.
-nnoremap ,html :-1read /mnt/c/Users/GAIA/.config/vim/.skeletal.html<CR>3jwf>a
+nnoremap ,html :-1read ~/.vim/config/skeletal.html<CR>3jwf>a
+nnoremap ,link :-1read ~/.vim/config/link.html<CR>0f"a
+nnoremap ,lia :read ~/.vim/config/a.html<CR>0f"a
 set path+=**
-filetype on
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
-
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'morhetz/gruvbox'
-Plugin 'jremmen/vim-ripgrep'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'vim-utils/vim-man'
-Plugin 'lyuts/vim-rtags'
+Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
-Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ycm-core/YouCompleteMe'
-
 call vundle#end()
-filetype plugin indent on
 
 colorscheme gruvbox
 set background=dark
 
 if executable('rg')
-    let g:rg_derive_root='true'
+    let g:rg_derive_root = 'true'
 endif
 
 let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-let g:ctrlp_use_caching=0
+let g:ctrlp_use_caching = 0
 let mapleader = " "
-let g:netrw_browse_split=2
-let g:netrw_banner=0
-let g:netrw_winsize=25
+let g:netrw_browse_split = 2
+let g:netrw_banner = 0
+let g:netrw_winsize = 25
 
-let g:ycm_global_ycm_extra_conf="~/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py"
-let g:ycm_show_diagnostics_ui = 0
-let syntastic_cpp_checkers = ["clang_tidy", "gcc", "avrgcc"]
-let g:syntastic_tex_checkers = ["lacheck", "text/language_check"]
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-
-let g:syntastic_cpp_check_header = 0
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 nnoremap <leader>h :wincmd h<CR>
 nnoremap <leader>l :wincmd l<CR>
 nnoremap <leader>j :wincmd j<CR>
@@ -84,3 +65,8 @@ nnoremap <leader>e :e $MYVIMRC<CR>
 nnoremap <leader>s :source ~/.vimrc<CR>
 nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent><leader>gf :YcmCompleter FixIt<CR>
+nnoremap <tab><left> :tabprevious<CR>
+nnoremap <tab><right> :tabnext<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gf :diffget //3<CR>
+nnoremap <leader>gh :diffget //2<CR>
