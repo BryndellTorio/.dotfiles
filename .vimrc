@@ -35,6 +35,7 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'ycm-core/youcompleteme'
 
@@ -74,4 +75,4 @@ nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :diffget //3<CR>
 nnoremap <leader>gh :diffget //2<CR>
 
-au BufRead,BufNewFile *.ino,*.pde,*.cpp set filetype=arduino
+au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
