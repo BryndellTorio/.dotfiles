@@ -35,6 +35,9 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'sudar/vim-arduino-syntax'
+Plugin 'ycm-core/youcompleteme'
+
 call vundle#end()
 
 colorscheme gruvbox
@@ -70,3 +73,5 @@ nnoremap <tab><right> :tabnext<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :diffget //3<CR>
 nnoremap <leader>gh :diffget //2<CR>
+
+au BufRead,BufNewFile *.ino,*.pde,*.cpp set filetype=arduino

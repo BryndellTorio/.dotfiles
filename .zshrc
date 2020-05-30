@@ -19,7 +19,7 @@ if [ -f ~/.aliasrc ]; then
 fi
 
 # User configuration
-# export MANPATH="/usr/local/man:$MANPATH"
+export MANPATH="/usr/local/man:$MANPATH"
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
@@ -50,6 +50,8 @@ echo -ne '\e[5 q' # Use beam shape cursor on startup.
 preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 source /home/gaia/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#For ssh-agent
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {

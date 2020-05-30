@@ -1,10 +1,11 @@
 #Major Commands
 alias sag="sudo apt-get"
 alias lkfr="ls -a | grep -i "
-alias FIND="sudo find . -iname"
-alias FINDR="sudo find ~ -iname"
+alias FIND="find . -iname"
+alias FINDR="find ~ -iname"
 alias update="source ~/.zshrc && echo '~/.zshrc file updated.'"
 alias ta="tmux attach"
+alias tn="tmux new -s "
 alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
 alias shac="ssh-add /home/gaia/.ssh/cloud_wp_rsa"
 alias shag="ssh-add /home/gaia/.ssh/github_rsa"
@@ -16,7 +17,8 @@ alias python="python2.7"
 alias python3="python3.8"
 alias mkd="mkdir -pv"
 alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/Firefox.exe &"
-alias chrome="/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe &"
+alias brave="/mnt/c/Program\ Files\ \(x86\)/BraveSoftware/Brave-Browser/Application/brave.exe &"
+
 alias kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe &"
 alias duck="web_search duckduckgo \\"
 alias arduino="/mnt/c/Program\ Files\ \(x86\)/Arduino/arduino.exe &"
@@ -50,3 +52,4 @@ alias cmd=cmd.exe
 alias wps=powershell.exe
 alias pio=platformio.exe
 alias notepad='notepad.exe &'
+
