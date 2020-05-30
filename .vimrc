@@ -18,6 +18,7 @@ set encoding=utf-8
 set colorcolumn=110
 set smartindent
 set nocompatible
+set wildignore+=*.jpg,.git
 filetype plugin indent on
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 "Stolen from Max Cantor.
