@@ -15,7 +15,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
-set colorcolumn=110
+set colorcolumn=140
 set smartindent
 set nocompatible
 set wildignore+=*.jpg,.git
@@ -31,6 +31,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
@@ -72,8 +73,8 @@ nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
 nnoremap <silent><leader>gf :YcmCompleter FixIt<CR>
 nnoremap <tab><left> :tabprevious<CR>
 nnoremap <tab><right> :tabnext<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gf :diffget //3<CR>
-nnoremap <leader>gh :diffget //2<CR>
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gh :diffget //3<CR>
+nnoremap <leader>gf :diffget //2<CR>
 
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
