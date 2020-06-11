@@ -13,6 +13,13 @@ alias shag="ssh-add /home/bryndell/.ssh/github_rsa"
 alias pru="pio run -t upload"
 alias pr="pio run"
 alias gpod="git push origin --delete "
+alias gbd="git branch -D "
+alias gba="git branch -a "
+alias gcb="git checkout -b "
+alias gc="git commit -m "
+alias gch="git checkout "
+alias gs="git status"
+alias gb="git branch"
 
 #SOME ALIASES
 alias v="vim"
