@@ -15,7 +15,7 @@ set undodir=~/.vim/undodir
 set undofile
 set incsearch
 set encoding=utf-8
-set colorcolumn=140
+set colorcolumn=110
 set smartindent
 set nocompatible
 set wildignore+=*.jpg,.git
@@ -23,23 +23,25 @@ filetype plugin indent on
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 "Stolen from Max Cantor.
 "35:29 / 1:14:02, How to Do 90% of What Plugins Do (With Just Vim) talk by Max.
-nnoremap ,html :-1read ~/.vim/config/skeletal.html<CR>3jwf>a
+nnoremap ,html :-1read ~/.vim/config/skeletal.html<CR>gg6j0f>a
 nnoremap ,link :-1read ~/.vim/config/link.html<CR>0f"a
 nnoremap ,lia :read ~/.vim/config/a.html<CR>0f"a
-set path+=**
+set path+=.,,**
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin('~/.vim/plugged')
+Plugin 'ycm-core/youcompleteme'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'sudar/vim-arduino-syntax'
-Plugin 'ycm-core/youcompleteme'
+Plugin 'ternjs/tern_for_vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 call vundle#end()
 
@@ -69,12 +71,40 @@ nnoremap <silent><leader>+ :vertical resize +5<CR>
 nnoremap <silent><leader>- :vertical resize -5<CR>
 nnoremap <leader>e :e $MYVIMRC<CR>
 nnoremap <leader>s :source ~/.vimrc<CR>
-nnoremap <silent><leader>gd :YcmCompleter GoTo<CR>
-nnoremap <silent><leader>gf :YcmCompleter FixIt<CR>
-nnoremap <tab><left> :tabprevious<CR>
-nnoremap <tab><right> :tabnext<CR>
-nnoremap <leader>gs :G<CR>
-nnoremap <leader>gh :diffget //3<CR>
-nnoremap <leader>gf :diffget //2<CR>
+nnoremap <tab>h :tabprevious<CR>
+nnoremap <tab>l :tabnext<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gf :diffget //3<CR>
+nnoremap <leader>gh :diffget //2<CR>
 
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
+
+fun! GoYCM()
+    nnoremap <buffer><silent><leader>gd :YcmCompleter GoTo<CR>
+    nnoremap <buffer><silent><leader>gr :YcmCompleter GoToReferences<CR>
+    nnoremap <buffer><silent><leader>rr :YcmCompleter RefactorRename<CR>
+endfun
+
+function! s:check_back_space() abort
+      let col = col('.') - 1
+        return !col || getline('.')[col - 1]  =~# '\s'
+    endfunction
+
+fun! GoCoC()
+    inoremap <silent><expr> <TAB>
+                \ pumvisible() ? "\<C-n>" :
+                \ <SID>check_back_space() ? "\<TAB>" :
+                \ coc#refresh()
+    inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+    inoremap <silent><expr> <c-space> coc#refresh()
+
+    " GoTo code navigation.
+    nmap <buffer><leader>gd <Plug>(coc-definition)
+    nmap <buffer><leader>gy <Plug>(coc-type-definition)
+    nmap <buffer><leader>gi <Plug>(coc-implementation)
+    nnoremap <buffer><leader>gr <Plug>(coc-references)
+    nnoremap <buffer><leader>cr :CocRestart
+endfun
+
+autocmd FileType typescript :call GoYCM()
+autocmd FileType arduino,cpp,cxx,h,hpp,c :call GoCoC()
