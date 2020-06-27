@@ -1,4 +1,5 @@
 syntax on
+packloadall
 set wildmenu
 set tabstop=4 softtabstop=4
 set shiftwidth=4
@@ -41,6 +42,10 @@ Plugin 'tpope/vim-commentary'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'sudar/vim-arduino-syntax'
 Plugin 'ternjs/tern_for_vim'
+Plugin 'prettier/vim-prettier', {
+            \ 'do': 'yarn install',
+            \ 'for': ['javascript', 'typescript', 'css',
+            \         'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 
 call vundle#end()
@@ -108,3 +113,4 @@ endfun
 
 autocmd FileType typescript :call GoYCM()
 autocmd FileType arduino,cpp,cxx,h,hpp,c :call GoCoC()
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
