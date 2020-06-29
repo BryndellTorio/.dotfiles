@@ -78,3 +78,4 @@ nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
+autocmd BufWritePre *.py,*.ino,*/src/*.cpp :%s/\s\+$//e

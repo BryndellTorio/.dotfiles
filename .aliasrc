@@ -11,6 +11,7 @@ alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000
 alias shac="ssh-add /home/bryndell/.ssh/cloud_wp_rsa"
 alias shag="ssh-add /home/bryndell/.ssh/github_rsa"
 alias pru="pio run -t upload"
+alias pdm="pio device monitor"
 alias pr="pio run"
 alias devmon="pio device monitor"
 
