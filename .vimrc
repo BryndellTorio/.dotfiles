@@ -1,7 +1,7 @@
 syntax on
 set wildmenu
-set tabstop=4 softtabstop=4
-set shiftwidth=4
+set tabstop=8 softtabstop=8
+set shiftwidth=8
 set expandtab
 set smartindent
 set nowrap
