@@ -42,6 +42,8 @@ Plugin 'ycm-core/youcompleteme'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
 set background=dark
 
@@ -108,6 +110,8 @@ fun! GoCoC()
         nmap <buffer> <leader>gy <Plug>(coc-type-definition)
         nmap <buffer> <leader>gi <Plug>(coc-implementation)
         nmap <buffer> <leader>gi <Plug>(coc-references)
+        nmap <buffer> <leader>rr <Plug>(coc-rename)
+	nnoremap <buffer> <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
         nnoremap <buffer> <leader>cr :CocRestart
 endfun
 
