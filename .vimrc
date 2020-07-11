@@ -116,7 +116,7 @@ fun! GoCoC()
 endfun
 
 autocmd FileType typescript,javascript :call GoYCM()
-autocmd FileType cpp,cxx,h,hpp,c :call GoCoC()
+autocmd FileType cpp,cxx,h,hpp,c,zsh :call GoCoC()
 
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
