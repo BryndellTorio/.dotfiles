@@ -6,33 +6,35 @@ alias FINDR="find ~ -iname"
 alias update="source ~/.zshrc && echo '~/.zshrc file updated.'"
 alias ta="tmux attach"
 alias tn="tmux new -s "
+alias pioprjm="pio project init --ide vim -b ATmega2560 -d "
 alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
-alias shac="ssh-add /home/gaia/.ssh/cloud_wp_rsa"
-alias shagh="ssh-add /home/gaia/.ssh/github_rsa"
-alias shagl="ssh-add /home/gaia/.ssh/gitlab_rsa"
-alias gpod="git push origin --delete"
+alias shac="ssh-add /home/bryndell/.ssh/cloud_wp_rsa"
+alias shag="ssh-add /home/bryndell/.ssh/github_rsa"
+alias pru="pio run -t upload"
+alias pdm="pio device monitor"
+alias pr="pio run"
+alias devmon="pio device monitor"
 
 #SOME ALIASES
 alias v="vim"
 alias g="git"
 alias python="python2.7"
-alias python3="python3.8"
+alias python3="python3.7"
 alias mkd="mkdir -pv"
 alias firefox="/mnt/c/Program\ Files/Mozilla\ Firefox/Firefox.exe &"
-alias brave="/mnt/c/Program\ Files\ \(x86\)/BraveSoftware/Brave-Browser/Application/brave.exe &"
-alias qbit="/mnt/c/Program\ Files/qBittorrent/qbittorrent.exe &"
-
 alias kicad="/mnt/c/Program\ Files/KiCad/bin/kicad.exe &"
 alias duck="web_search duckduckgo \\"
 alias arduino="/mnt/c/Program\ Files\ \(x86\)/Arduino/arduino.exe &"
-alias vlc="/mnt/c/Program\ Files/VideoLAN/VLC/vlc.exe "
-alias excel="/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/EXCEL.EXE"
-alias openpdf="/mnt/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ Reader\ DC/Reader/AcroRd32.exe "
+alias xlaunch="export DISPLAY=:0 && /mnt/c/Program\ Files\ \(x86\)/Xming/XLaunch.exe &"
+alias excel='/mnt/c/Program\ Files\ \(x86\)/Microsoft\ Office/root/Office16/EXCEL.EXE'
+alias openpdf="/mnt/c/Program\ Files\ \(x86\)/Adobe/Acrobat\ Reader\ DC/Reader/AcroRd32.exe"
 alias openjpg="mspaint.exe"
+alias vlc="/mnt/c/Program\ Files/VideoLAN/VLC/vlc.exe"
 alias music="ducky music.youtube.com"
 alias msg="ducky messenger"
 alias cloud="ducky console.cloud.google.com"
 alias cpplint="~/styleguide/cpplint/cpplint.py "
+
 
 #Adding Color
 alias ls="ls -hN --color=auto --group-directories-first"
@@ -43,11 +45,12 @@ alias ccat="highlight --out-format=ansi"
 alias cmplpp="g++ -o runCode code.cpp"
 alias cmpl="gcc -o runCode code.c"
 
-#Common Directories I use.
+#Copy commands
 alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc -t ~/.dotfiles && echo '.bashrc .vimrc .tmux.conf .aliasrc .zshrc copied to ~/.dotfiles File.'"
-alias cplib="cp -r /mnt/c/Users/GAIA/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
-alias prj="cd /mnt/c/Users/GAIA/Documents/Project"
-alias hm="cd /mnt/c/Users/GAIA/"
+
+#Super Jump
+alias prj="cd /mnt/c/Users/Rndpc13/Desktop/Bryndell/Project/"
+alias hm="cd /mnt/c/Users/Rndpc13"
 alias film="cd /mnt/c/Movies"
 
 #Common Development Tools
@@ -56,6 +59,3 @@ alias cmd=cmd.exe
 alias wps=powershell.exe
 alias pio=platformio.exe
 alias notepad='notepad.exe &'
-
-alias pr="pio run";
-alias pru="pio run -t upload";

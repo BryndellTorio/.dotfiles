@@ -123,8 +123,3 @@ if [ ! -e "$VIM_EXTPATHS" ] || [ "/usr/bin/cpp" -nt "$VIM_EXTPATHS" ]; then
                 awk '/^#include </ { state=1 } /End of search list/ { state=0 } /^ / && state { print "set path+=" substr($0, 2) "/**2" }' > $VIM_EXTPATHS
 fi
 
-set -o vi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
