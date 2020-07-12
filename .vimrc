@@ -43,6 +43,8 @@ Plugin 'ycm-core/youcompleteme'
 
 call vundle#end()
 
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_selection = '0'
 colorscheme gruvbox
 set background=dark
 
@@ -79,3 +81,8 @@ nnoremap <leader>gf :diffget //2<CR>
 
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
 autocmd BufWritePre *.py,*.ino,*/src/*.cpp :%s/\s\+$//e
+
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
