@@ -7,9 +7,9 @@ alias update="source ~/.zshrc && echo '~/.zshrc file updated.'"
 alias ta="tmux attach"
 alias tn="tmux new -s "
 alias serve="browser-sync start -s -f . --no-notify --host $LOCAL_IP --port 9000"
-alias shac="ssh-add /home/gaia/.ssh/cloud_wp_rsa"
-alias shagh="ssh-add /home/gaia/.ssh/github_rsa"
-alias shagl="ssh-add /home/gaia/.ssh/gitlab_rsa"
+alias shac="ssh-add /home/bryndell/.ssh/cloud_wp_rsa"
+alias shagh="ssh-add /home/bryndell/.ssh/github_rsa"
+alias shagl="ssh-add /home/bryndell/.ssh/gitlab_rsa"
 alias gpod="git push origin --delete"
 
 #SOME ALIASES
@@ -45,9 +45,9 @@ alias cmpl="gcc -o runCode code.c"
 
 #Common Directories I use.
 alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc -t ~/.dotfiles && echo '.bashrc .vimrc .tmux.conf .aliasrc .zshrc copied to ~/.dotfiles File.'"
-alias cplib="cp -r /mnt/c/Users/GAIA/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
-alias prj="cd /mnt/c/Users/GAIA/Documents/Project"
-alias hm="cd /mnt/c/Users/GAIA/"
+alias cplib="cp -r /mnt/c/Users/Bryndell/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
+alias prj="cd /mnt/c/Users/Bryndell/Documents/Project"
+alias hm="cd /mnt/c/Users/Bryndell/"
 alias film="cd /mnt/c/Movies"
 
 #Common Development Tools
