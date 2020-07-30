@@ -34,21 +34,25 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mbbill/undotree'
 Plugin 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+			\ 'do': 'yarn install',
+			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plugin 'vim-syntastic/syntastic'
 Plugin 'sudar/vim-arduino-syntax'
-Plugin 'ycm-core/youcompleteme'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 call vundle#end()
 
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = '0'
+
+" if exists('+termguicolors') 
+" 	let &t_8f = '\<Esc>[38;2;%lu;%lu;%lum'
+" 	let &t_8b = '\<Esc>[48;2;%lu;%lu;%lum'
+" endif
 colorscheme gruvbox
 set background=dark
 
 if executable('rg')
-        let g:rg_derive_root = 'true'
+	let g:rg_derive_root = 'true'
 endif
 
 let g:ctrlp_user_command = ['.git', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
@@ -83,47 +87,36 @@ nnoremap <leader>gs :G<CR>
 nnoremap <leader>gh :diffget //3<CR>
 nnoremap <leader>gf :diffget //2<CR>
 
-au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
-autocmd BufWritePre *.css,*.html,*.py,*.ino,*/src/*.cpp :%s/\s\+$//e
-
-fun! GoYCM()
-        nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
-        nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
-        nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<space>
-endfun
-
-function! s:check_back_space() abort
-        let col = col('.') - 1
-        return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-fun! GoCoC()
-        inoremap <buffer><silent><expr> <TAB>
-                                \ pumvisible() ? "\<C-n>" :
-                                \ <SID>check_back_space() ? "\<TAB>" :
-                                \ coc#refresh()
-
-        inoremap <buffer><expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-        inoremap <buffer><silent><expr> <c-space> coc#refresh()
-
-        nmap <buffer> <leader>gd <Plug>(coc-definition)
-        nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-        nmap <buffer> <leader>gi <Plug>(coc-implementation)
-        nmap <buffer> <leader>gi <Plug>(coc-references)
-        nmap <buffer> <leader>rr <Plug>(coc-rename)
-	nnoremap <buffer> <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-        nnoremap <buffer> <leader>cr :CocRestart
-endfun
-
-autocmd FileType typescript,javascript :call GoYCM()
-autocmd FileType cpp,cxx,h,hpp,c,zsh :call GoCoC()
-
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
-let g:prettier#quickfix_enabled = 0
-autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
+autocmd BufWritePre *.css,*.html,*.py,*.ino,*/src/*.cpp :%s/\s\+$//e
+
+function! s:check_back_space() abort
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <buffer><silent><expr> <TAB>
+			\ pumvisible() ? "\<C-n>" :
+			\ <SID>check_back_space() ? "\<TAB>" :
+			\ coc#refresh()
+
+inoremap <buffer><expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+inoremap <buffer><silent><expr> <c-space> coc#refresh()
+
+nmap <buffer> <leader>gd <Plug>(coc-definition)
+nmap <buffer> <leader>gy <Plug>(coc-type-definition)
+nmap <buffer> <leader>gi <Plug>(coc-implementation)
+nmap <buffer> <leader>gi <Plug>(coc-references)
+nmap <buffer> <leader>rr <Plug>(coc-rename)
+nnoremap <buffer> <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
+nnoremap <buffer> <leader>cr :CocRestart
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 if isdirectory('/usr/include/c++/9')
 	set path+=/usr/include/c++/9
