@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bryndell/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="tonotdo"
+ZSH_THEME="xiong-chiamiov-plus"
 
 plugins=(
     git
@@ -55,7 +55,7 @@ source /home/bryndell/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-synt
 SSH_ENV="$HOME/.ssh/environment"
 
 function start_agent {
-    echo "Initialising new SSH agent..."
+    echo "Initializing new SSH agent..."
     /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
     echo succeeded
     chmod 600 "${SSH_ENV}"
@@ -73,3 +73,13 @@ if [ -f "${SSH_ENV}" ]; then
 else
     start_agent;
 fi
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/mnt/c/Users/Bryndell/Documents/Project/diyelectronicsph.com/gcloud_subdirectory/google-cloud-sdk/path.zsh.inc' ]; then . '/mnt/c/Users/Bryndell/Documents/Project/diyelectronicsph.com/gcloud_subdirectory/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/mnt/c/Users/Bryndell/Documents/Project/diyelectronicsph.com/gcloud_subdirectory/google-cloud-sdk/completion.zsh.inc' ]; then . '/mnt/c/Users/Bryndell/Documents/Project/diyelectronicsph.com/gcloud_subdirectory/google-cloud-sdk/completion.zsh.inc'; fi
