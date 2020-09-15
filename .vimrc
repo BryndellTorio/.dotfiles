@@ -38,9 +38,13 @@ Plugin 'prettier/vim-prettier', {
 			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plugin 'vim-syntastic/syntastic'
 Plugin 'sudar/vim-arduino-syntax'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 call vundle#end()
 
+let python_highlight_all = 1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = '0'
 
@@ -94,26 +98,10 @@ let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
 autocmd BufWritePre *.css,*.html,*.py,*.ino,*/src/*.cpp :%s/\s\+$//e
 
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
+let g:ycm_key_list_select_completion = []
+let g:ycm_key_list_previous_completion = []
 
-inoremap <buffer><silent><expr> <TAB>
-			\ pumvisible() ? "\<C-n>" :
-			\ <SID>check_back_space() ? "\<TAB>" :
-			\ coc#refresh()
-
-inoremap <buffer><expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-inoremap <buffer><silent><expr> <c-space> coc#refresh()
-
-nmap <buffer> <leader>gd <Plug>(coc-definition)
-nmap <buffer> <leader>gy <Plug>(coc-type-definition)
-nmap <buffer> <leader>gi <Plug>(coc-implementation)
-nmap <buffer> <leader>gi <Plug>(coc-references)
-nmap <buffer> <leader>rr <Plug>(coc-rename)
-nnoremap <buffer> <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
-nnoremap <buffer> <leader>cr :CocRestart
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
@@ -123,3 +111,12 @@ if isdirectory('/usr/include/c++/9')
 elseif isdirectory('/mnt/c/Users/GAIA/.platformio/packages/framework-arduino-avr/cores/arduino')
 	set path+=/mnt/c/Users/GAIA/.platformio/packages/framework-arduino-avr/cores/arduino
 endif
+
+" Trigger configuration. Do not use <tab> if you use
+" https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
