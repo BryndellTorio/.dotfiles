@@ -1,4 +1,5 @@
 syntax on
+set backspace=indent,eol,start
 set wildmenu
 set nowrap
 set relativenumber
@@ -37,14 +38,9 @@ Plugin 'prettier/vim-prettier', {
 			\ 'do': 'yarn install',
 			\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plugin 'vim-syntastic/syntastic'
-Plugin 'sudar/vim-arduino-syntax'
-Plugin 'ycm-core/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
+Plugin 'ycm-core/youcompleteme'
 call vundle#end()
 
-let python_highlight_all = 1
 let g:gruvbox_contrast_dark = 'hard'
 let g:gruvbox_invert_selection = '0'
 
@@ -95,28 +91,14 @@ let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
+nnoremap ,html :-1read ~/.vim/config/skeletal.html<CR>gg7jf>a
+nnoremap ,b :read ~/.vim/config/break-tag.html<CR>kJ==f<f<i
+nnoremap ,str :read ~/.vim/config/strong.html<CR>kJ==f<f<i
+nnoremap ,a :read ~/.vim/config/a.html<CR>kJ==f<f"a
+nnoremap ,lia :read ~/.vim/config/lia.html<CR>kJ==^f"a
+
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
 autocmd BufWritePre *.css,*.html,*.py,*.ino,*/src/*.cpp :%s/\s\+$//e
 
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_key_list_select_completion = []
-let g:ycm_key_list_previous_completion = []
-
-
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
-
-if isdirectory('/usr/include/c++/9')
-	set path+=/usr/include/c++/9
-elseif isdirectory('/mnt/c/Users/GAIA/.platformio/packages/framework-arduino-avr/cores/arduino')
-	set path+=/mnt/c/Users/GAIA/.platformio/packages/framework-arduino-avr/cores/arduino
-endif
-
-" Trigger configuration. Do not use <tab> if you use
-" https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
