@@ -42,7 +42,7 @@ alias cmplpp="g++ -o runCode code.cpp"
 alias cmpl="gcc -o runCode code.c"
 
 #Common Directories I use.
-alias cpsu="cp ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc -t /home/gaia/documents/.dotfiles && echo '.bashrc .vimrc .tmux.conf .aliasrc .zshrc copied to ~/.dotfiles File.'"
+alias cpsu="cp -r ~/.bashrc ~/.vimrc ~/.tmux.conf ~/.aliasrc ~/.zshrc ~/.vim/ftplugin ~/.vim/config -t /home/gaia/documents/.dotfiles && echo 'all custom configurations copied to ~/.dotfiles file.'"
 alias cplib="cp -r /mnt/c/Users/GAIA/Documents/KiCAD/CostumLib -t ~/.dotfiles && echo 'CostumLib copied to ~/.dotfiles'"
 alias prj="cd /var/www/diyelectronicsph.com"
 alias hm="cd /home/gaia/"

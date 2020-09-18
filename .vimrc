@@ -41,15 +41,15 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'ycm-core/youcompleteme'
 call vundle#end()
 
-let g:gruvbox_contrast_dark = 'hard'
-let g:gruvbox_invert_selection = '0'
-
 " if exists('+termguicolors') 
 " 	let &t_8f = '\<Esc>[38;2;%lu;%lu;%lum'
 " 	let &t_8b = '\<Esc>[48;2;%lu;%lu;%lum'
 " endif
+
 colorscheme gruvbox
 set background=dark
+let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_invert_selection = '0'
 
 if executable('rg')
 	let g:rg_derive_root = 'true'
@@ -91,14 +91,8 @@ let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
 
-nnoremap ,html :-1read ~/.vim/config/skeletal.html<CR>gg7jf>a
-nnoremap ,b :read ~/.vim/config/break-tag.html<CR>kJ==f<f<i
-nnoremap ,str :read ~/.vim/config/strong.html<CR>kJ==f<f<i
-nnoremap ,a :read ~/.vim/config/a.html<CR>kJ==f<f"a
-nnoremap ,lia :read ~/.vim/config/lia.html<CR>kJ==^f"a
-
 au BufRead,BufNewFile *.ino,*.pde,*/src/*.cpp set filetype=arduino
-autocmd BufWritePre *.css,*.html,*.py,*.ino,*/src/*.cpp :%s/\s\+$//e
+autocmd BufWritePre *.php, *.css,*.html,*.py,*.ino,*/src/*.cpp :%s/\s\+$//e
 
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
