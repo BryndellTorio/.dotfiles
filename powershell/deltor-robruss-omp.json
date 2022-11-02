@@ -5,7 +5,7 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "e08d3c",
+          "foreground": "#F8F8FF",
           "style": "powerline",
           "template": "{{ .Icon }}",
           "type": "os"
@@ -38,25 +38,13 @@
       "type": "prompt"
     },
     {
-        "alignment": "right",
-        "segments": [
-            {
-            "foreground": "e08d3c",
-            "style": "plain",
-            "template": " {{ .CurrentDate | date .Format }} ",
-            "type": "time"
-            }
-        ],
-        "type": "prompt"
-    },
-    {
       "alignment": "left",
       "newline": true,
       "segments": [
         {
-          "foreground": "#98C379",
+          "foreground": "e08d3c",
           "style": "plain",
-          "template": "\u279c",
+          "template": "\u276f\u276f\u276f",
           "type": "text"
         }
       ],
