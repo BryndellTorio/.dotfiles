@@ -1,6 +1,5 @@
 . $env:USERPROFILE\.config\powershell\user_profile.ps1
 #Paste: System Clipboard to Vim "+p.
-#Import-Module 'C:\tools\poshgit\dahlbyk-posh-git-9bda399\src\posh-git.psd1'
 Import-Module posh-git
 
 # New-Alias -Name python -Value 'C:\Python310\python.exe'
@@ -40,13 +39,13 @@ function cdMovies {
 Set-Alias -name movies -value cdMovies
 
 function Build-OS-Net {
-	[CmdletBinding(SupportsShouldProcess)]
-		param (
-				[string]$pathName
-		      )
-			process {
-				west -v build -p -b nrf5340dk_nrf5340_cpunet $pathName 
-			}
+    [CmdletBinding(SupportsShouldProcess)]
+        param (
+                [string]$pathName
+              )
+            process {
+                west -v build -p -b nrf5340dk_nrf5340_cpunet $pathName 
+            }
 } 
 
 function Build-OS-App {
@@ -338,15 +337,11 @@ https://vladtalkstech.com/2014/03/change-pwershell-machinepolicy-execution-polic
 https://www.youtube.com/watch?v=n2-wZDux8L4
 #>
 
-#. 'C:\tools\poshgit\dahlbyk-posh-git-9bda399\install.ps1'
-
-# Add these lines to your $PROFILE
-New-Alias -Name vi -Value 'C:\Users\bryndell.torio\scoop\apps\neovim\current\bin\nvim.exe'
 # New-Alias -Name cmake -Value 'C:\Program Files\CMake\bin\cmake.exe'
 # New-Alias -Name west -Value 'C:\Users\bryndell.torio\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.10_qbz5n2kfra8p0\LocalCache\local-packages\Python310\Scripts\west.exe'
 
 # Include this if you like a vim command line experience
 Set-PSReadlineOption -EditMode vi -BellStyle None
 
-$nvimrc="C:\Users\bryndell.torio\AppData\Local\nvim\init.vim"
+$nvimConfDir="C:\Users\bryndell.torio\AppData\Local\nvim\"
 $traLoc="C:\Users\bryndell.torio\Documents\Training\"
