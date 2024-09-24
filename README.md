@@ -1,8 +1,6 @@
 # Commands
 - To link nvim to ~/.config/
-
-ln -s ~/.dotfiles/nvim/ ~/.config/
+`ln -s ~/.dotfiles/nvim/ ~/.config/`
 
 - To link tmux to ~/.config/
-
-ln -s ~/.dotfiles/tmux ~/.config/
+`ln -s ~/.dotfiles/tmux ~/.config/`
