@@ -1,0 +1,9 @@
+# Custom installation for exa using rustc and cargo
+# bat using sudo apt install bat.
+alias luamake="/home/d3l/.config/nvim/lua-language-server/3rd/luamake/luamake"
+alias ls="exa --icons"
+alias la="exa -a --icons"
+alias tree="exa -T"
+alias ll="exa -la --sort=new --group-directories-first --icons"
+alias cat="bat"
+alias scan_high_res=scan_and_save.sh
