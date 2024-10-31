@@ -7,3 +7,6 @@ alias tree="exa -T"
 alias ll="exa -la --sort=new --group-directories-first --icons"
 alias cat="bat"
 alias scan_high_res=scan_and_save.sh
+alias block_screen_lock="zsh /usr/local/bin/scrn_lck.sh"
+alias audio_reinit="sudo systemctl restart sound.target"
+alias db_prod_conn="psql 'sslmode=require host=timescaledb-production-sensorflow-4883.aivencloud.com port=22232 dbname=production user=del password=DHPTrgUdJVuWm7wv9KpjhcLeQXGx6C'"

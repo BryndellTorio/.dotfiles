@@ -18,30 +18,45 @@ vim.opt.termguicolors = true
 
 vim.g.mapleader = " "
 
--- Resource the config file.
-vim.api.nvim_set_keymap("n", "<leader><leader>s", ":luafile %<CR>", {noremap = true, silent = true })
+vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
+vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next [D]iagnostic message" })
 
-vim.api.nvim_set_keymap("n", "<leader>e", ":Rexplore<CR>", {noremap = true, silent = true })
+-- Resource the config file.
+vim.api.nvim_set_keymap("n", "<leader><leader>s", ":luafile %<CR>", {
+    desc = "Command to resource the files.",
+    noremap = true,
+    silent = true
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
     desc = "Highlight when yanking (copying) text",
     group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-    callback = function ()
+    callback = function()
         vim.highlight.on_yank()
     end,
 })
 
--- Understand this!! based from https://www.youtube.com/watch?v=m8C0Cq9Uv9o&t=103s
--- config = function ()
--- 	vim.api.nvim_create_autocmd("LspAttach", {
--- 		group = vim.api.nvim_create_augroup("kickstart-lsp-attach", { clear = true }),
--- 		callback = function ()
--- 			local map = function(keys, func, desc)
--- 				vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
--- 			end
---
--- 			map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
--- 			map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
--- 		end,
--- 	})
--- end,
+-- NOTE: Turn off search highlighting when cursor moved.
+vim.api.nvim_set_keymap("n", "<leader>nh", ":lua vim.cmd('nohlsearch')<CR>", {
+    desc = "keymap to remove search highlight.",
+    noremap = true,
+    silent = true,
+})
+
+function ToggleExplore()
+    if vim.b.netrw_browser_active then
+        vim.cmd("Rexplore")
+    else
+        vim.cmd("Explore")
+    end
+end
+
+vim.api.nvim_set_keymap("n", "<leader>e", ":lua ToggleExplore()<CR>", {
+    desc = "Use builtin netrw to navigate file tree.",
+    noremap = true,
+    silent = true,
+})
+
+
+-- Force an Esc remap to Esc.
+vim.api.nvim_set_keymap("i", "<Esc>", "<Esc>", { noremap = true, silent = true })
