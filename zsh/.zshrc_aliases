@@ -1,12 +1,44 @@
 # Custom installation for exa using rustc and cargo
 # bat using sudo apt install bat.
 alias luamake="/home/d3l/.config/nvim/lua-language-server/3rd/luamake/luamake"
-alias ls="exa --icons"
-alias la="exa -a --icons"
-alias tree="exa -T"
-alias ll="exa -la --sort=new --group-directories-first --icons"
-alias cat="bat"
+
+if [[ "$0" == /bin/zsh ]]; then
+    alias cat="bat"
+    alias ls="exa --icons"
+    alias la="exa -a --icons"
+    alias tree="exa -T"
+    alias ll="exa -la --sort=new --group-directories-first --icons"
+fi
+
+alias cta="ceedling clean; ceedling test:all"
+alias ctalog="cta > ceedling_log.txt 2>&1"
+alias cd="z"
+alias c="clear"
+alias vim="nvim"
 alias scan_high_res=scan_and_save.sh
 alias block_screen_lock="zsh /usr/local/bin/scrn_lck.sh"
 alias audio_reinit="sudo systemctl restart sound.target"
 alias db_prod_conn="psql 'sslmode=require host=timescaledb-production-sensorflow-4883.aivencloud.com port=22232 dbname=production user=del password=DHPTrgUdJVuWm7wv9KpjhcLeQXGx6C'"
+
+#PlatformIO
+alias pr="platformio run"
+alias pru="platformio run -t upload"
+alias prc="platformio run -t compiledb"
+alias pdm="platformio device monitor"
+
+alias gst="git status"
+alias gba="git branch -a"
+alias gl="git log --graph --oneline"
+alias gcmsg="git commit -m"
+alias gp="git push"
+alias gco="git checkout"
+
+#Stash
+alias gsl="git stash list"
+alias gss="git stash show"
+alias gsp="git stash pop"
+alias gsd="git stash drop"
+
+#ESP IDF
+alias espidf="source $HOME/esp/esp-idf/export.sh"
+alias idf="idf.py"
