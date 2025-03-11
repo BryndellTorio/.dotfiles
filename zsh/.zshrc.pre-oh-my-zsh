@@ -240,11 +240,6 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
     . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -257,4 +252,25 @@ if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
 
+# custom aliases
+if [ -f ~/.zshrc_aliases ]; then
+    source ~/.zshrc_aliases
+fi
+
 set -o vi
+
+export PATH=$PATH:/snap/bin
+export PATH=$PATH:~/.cargo/bin
+export PATH=$PATH:/home/d3l/.platformio/penv/bin
+export PATH=$PATH:"/home/d3l/idea-IC-243.22562.145/bin"
+export PATH=$PATH:/opt/nvim/
+
+# turn off track pad.
+xinput disable 16
+
+# Initialize zoxide
+eval "$(zoxide init zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

@@ -26,19 +26,33 @@ alias pru="platformio run -t upload"
 alias prc="platformio run -t compiledb"
 alias pdm="platformio device monitor"
 
+#Git
 alias gst="git status"
 alias gba="git branch -a"
 alias gl="git log --graph --oneline"
 alias gcmsg="git commit -m"
 alias gp="git push"
 alias gco="git checkout"
+alias gau="git add --update"
+alias gpo="git push origin"
 
-#Stash
 alias gsl="git stash list"
 alias gss="git stash show"
 alias gsp="git stash pop"
 alias gsd="git stash drop"
 
+#ssh
+alias sak="ssh_add_key"
+
 #ESP IDF
 alias espidf="source $HOME/esp/esp-idf/export.sh"
 alias idf="idf.py"
+
+#Libreoffice
+alias lo="sudo libreoffice"
+alias note="/home/d3l/.obsidian/Obsidian-1.8.7.AppImage &"
+alias gantt='JDK_JAVA_OPTIONS="-Dsun.java2d.uiScale=2" ganttproject'
+alias projectLib='JDK_JAVA_OPTIONS="-Dsun.java2d.uiScale=2" projectlibre'
+
+#Pass Vault
+alias pgp="pass git push origin main"

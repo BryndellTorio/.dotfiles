@@ -158,3 +158,16 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
+
+function ssh_add_key() {
+    # Start the SSH agent if not already running
+    if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+        eval "$(ssh-agent -s)" > /dev/null
+    fi
+
+    # Add SSH key to the agent
+    ssh-add ~/.ssh/id_ed25519 &> /dev/null
+}
+
+export PATH=/usr/lib/qt6/bin:$PATH
+export EDITOR=nvim
