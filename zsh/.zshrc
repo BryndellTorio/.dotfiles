@@ -9,7 +9,6 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="fwalch"
-
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
@@ -157,7 +156,10 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/.camunda/camunda-modeler-5.34.0-linux-x64/"
+
+# Add path to camunda
+export PATH=$PATH:$HOME
 
 function ssh_add_key() {
     # Start the SSH agent if not already running
@@ -171,3 +173,4 @@ function ssh_add_key() {
 
 export PATH=/usr/lib/qt6/bin:$PATH
 export EDITOR=nvim
+export export LD_LIBRARY_PATH=/usr/lib/libreoffice/program:/usr/lib/libreoffice/program:/usr/lib/x86_64-linux-gnu/:/usr/lib
